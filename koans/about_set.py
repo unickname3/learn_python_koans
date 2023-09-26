@@ -11,8 +11,10 @@ def test_create():
     P.S пустое множество невозможно создать как {}, так-как синтаксис совпадёт с созданием словаря.
     """
 
-    my_set = set(
-        (1, 2, 3)
+
+    my_set = (
+        set()
+
     )  # попробуйте такие варианты: set(), {1, 2, 3}, {'qwerty'}, set((1, 2, 3))
     assert isinstance(my_set, set)
 
@@ -36,10 +38,8 @@ def test_words_in_set():
     Множества могут содержать не только цифры и буквы.
     """
     my_set = {
-        True,
-        "set",
-        17,
-        (22, 33, 44),
+        1,
+        "cow",
     }  # попробуйте такие варианты: {True, 'set', 2}, {'cow', 'fox', 'cat'}
     assert isinstance(my_set, set)
 
@@ -129,7 +129,7 @@ def test_duplicate_removal():
     True
     """
     my_duplicated_list = ["cow", "cat", "cat", "dog", "cat", "cow"]
-    my_unique_list = ["cow", "cat", "dog"]  # исключите дубликаты вручную
+    my_unique_list = ["cat", "cow", "dog"]  # исключите дубликаты вручную
     assert sorted(my_unique_list) == sorted(list(set(my_duplicated_list)))
 
 
